@@ -41,4 +41,4 @@ Building Schelo helped me practice:
 
 ---
 
-*Created with ❤️ by [Your Name/Username]*
+*Created with ❤️ by [Ananya Mishra]*
