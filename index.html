@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schelo | Journey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>SCHELO</h1>
+            <p>Your Daily Journey</p>
+        </header>
+
+        <div class="map-section">
+            <div class="path-line">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div id="nodes-container" class="nodes-container">
+                </div>
+        </div>
+
+        <div class="focus-card">
+            <p class="label">Current Milestone</p>
+            <h2 id="active-task-text">No milestones planted yet.</h2>
+            <button id="advance-btn" onclick="advance()">Move Forward →</button>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Enter a task...">
+            <button onclick="addMilestone()">Plant Flag</button>
+        </div>
+        
+        <button class="reset-btn" onclick="resetJourney()">Reset Journey</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
