@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Schelo Gamified Dark Theme Default */
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Oxanium', sans-serif;
+
+    /* Base Colors - Deep Dark Blue/Black */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    /* Neon Green / Cyan for Progress */
+    --primary: 154 100% 50%;
+    --primary-foreground: 240 10% 4%;
+
+    /* Secondary / Card surfaces */
+    --secondary: 240 10% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+    --card-border: 240 10% 14%;
+
+    --muted: 240 10% 12%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 270 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 16%;
+    --input: 240 10% 12%;
+    --ring: 154 100% 50%;
+
+    --radius: 1rem;
+  }
+
+  /* Force dark mode */
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    /* Subtle noise texture for a premium tactile feel */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsla(var(--primary) / 0.4);
+  }
+  .glow-primary-lg {
+    box-shadow: 0 0 40px hsla(var(--primary) / 0.6);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsla(var(--primary) / 0.5);
+  }
+}
+
+/* Custom Scrollbar for the horizontal journey map */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsla(var(--background) / 1);
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(var(--muted-foreground) / 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(var(--primary) / 0.5);
+}
